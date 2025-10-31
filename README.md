@@ -1,36 +1,111 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AI COMPANY CREATOR
 
-## Getting Started
+Plataforma para conectar empresas grandes con proveedores de soluciones de IA. Los proveedores publican sus casos de uso y servicios, mientras que los clientes los buscan mediante un chatbot inteligente.
 
-First, run the development server:
+## 🚀 Características
+
+### Para Clientes
+- **Chatbot de Búsqueda**: Interfaz conversacional para encontrar proveedores por necesidad
+- **Resultados Inteligentes**: Matching por keywords con scoring y filtros avanzados
+- **Perfiles Completos**: Visualización detallada de proveedores con pestañas (Casos de Éxito, Equipo, Stack Tecnológico, Validación)
+- **Gestión de Búsquedas**: Historial, favoritos y seguimiento de contactos
+
+### Para Proveedores
+- **Dashboard Completo**: Métricas de visualizaciones, búsquedas y leads
+- **Gestión de Perfil**: Información completa de la empresa, equipo, stack tecnológico y clientes
+- **Casos de Uso**: Publicación y gestión de casos de éxito con KPIs
+- **Inbox CRM**: Bandeja de mensajes con estados (Nuevo, Contactado, En Negociación, Cerrado)
+
+### Para Administradores
+- **KPIs de Plataforma**: Métricas de clientes, proveedores, MRR y churn rate
+- **Gestión de Usuarios**: CRUD completo para clientes, proveedores y admins
+- **Gestión Financiera**: Planes de suscripción y transacciones
+- **Configuración**: Ajustes del chatbot y plantillas de correos
+
+## 🛠️ Tecnologías
+
+- **Next.js 16**: App Router y React 19
+- **Radix UI**: Componentes accesibles y profesionales
+- **Tailwind CSS 4**: Diseño moderno y responsive
+- **TypeScript**: Type safety completo
+- **Lucide React**: Iconografía consistente
+
+## 📦 Instalación
+
+```bash
+npm install
+```
+
+## 🏃 Desarrollo
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎨 Diseño
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Interfaz moderna inspirada en Google con:
+- **Modo claro** limpio y profesional
+- **Sidebar** de navegación con estados activos
+- **Cards elevadas** con sombras sutiles
+- **Gradientes** en elementos clave
+- **Animaciones** suaves en hover
+- **Tipografía** clara con jerarquía visual
 
-## Learn More
+## 📁 Estructura del Proyecto
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+├── admin/          # Módulo de administración
+│   ├── chatbot/    # Configuración del chatbot
+│   ├── notifications/ # Plantillas de correos
+│   ├── subscriptions/ # Planes de suscripción
+│   ├── transactions/  # Transacciones
+│   └── users/         # Gestión de usuarios
+├── client/            # Módulo de cliente
+│   ├── contacts/      # Estado de contactos
+│   ├── favorites/     # Proveedores favoritos
+│   ├── history/       # Historial de búsquedas
+│   ├── provider/      # Perfil del proveedor
+│   ├── search/        # Resultados de búsqueda
+│   └── use-case/      # Detalle de caso de uso
+├── provider/          # Módulo de proveedor
+│   ├── inbox/         # Bandeja de mensajes
+│   ├── profile/       # Gestión de perfil
+│   └── use-cases/     # Casos de uso
+└── auth/              # Autenticación
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+components/
+├── client/            # Componentes del cliente
+├── shared/            # Componentes compartidos
+│   ├── Chatbot.tsx
+│   ├── EmptyState.tsx
+│   ├── LoadingSkeleton.tsx
+│   ├── MetricCard.tsx
+│   ├── PageLayout.tsx
+│   ├── ProviderCard.tsx
+│   ├── Sidebar.tsx
+│   ├── TopNav.tsx
+│   └── UseCaseCard.tsx
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+data/mock/             # Datos mock para desarrollo
+lib/
+└── auth.tsx           # Autenticación y contexto de usuario
+```
 
-## Deploy on Vercel
+## 🎯 Próximos Pasos
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [ ] Integración con backend real
+- [ ] Sistema de autenticación completo
+- [ ] Pagos reales con Stripe
+- [ ] Chatbot con IA real (OpenAI/Anthropic)
+- [ ] Emails transaccionales
+- [ ] Analytics avanzado
+- [ ] Mobile responsive mejorado
+- [ ] Tests automatizados
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 Licencia
+
+MIT
