@@ -88,7 +88,7 @@ export default function UseCaseDetailPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          {Object.entries(useCase.results).map(([key, value]: any]) => {
+          {Object.entries(useCase.results).map(([key, value]: [string, any]) => {
             const kpi = useCase.kpis[Object.keys(useCase.results).indexOf(key)] || key;
             return (
               <div

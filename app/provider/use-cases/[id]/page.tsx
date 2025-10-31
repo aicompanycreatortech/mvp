@@ -63,7 +63,7 @@ export default function EditUseCasePage() {
     setFormData((prev) => ({
       ...prev,
       industry: prev.industry.includes(ind)
-        ? prev.industry.filter((i) => i !== ind))
+        ? prev.industry.filter((i) => i !== ind)
         : [...prev.industry, ind],
     }));
   };
