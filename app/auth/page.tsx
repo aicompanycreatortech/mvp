@@ -2,9 +2,8 @@
 
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth";
-import { Theme, Button } from "@radix-ui/themes";
-import * as Select from "@radix-ui/react-select";
-import { CheckIcon, ChevronDownIcon } from "@radix-ui/react-icons";
+import { Button, Select } from "@radix-ui/themes";
+import { Sparkles, Building2, UserCog } from "lucide-react";
 import { useState } from "react";
 
 export default function AuthPage() {
@@ -19,58 +18,120 @@ export default function AuthPage() {
     if (role === "admin") router.push("/admin");
   };
 
-  return (
-    <div className="min-h-dvh grid place-items-center p-6">
-      <div className="w-full max-w-md rounded-xl border border-gray-200 p-6 bg-gray-100">
-        <h1 className="text-2xl font-semibold mb-4">Accede (Demo)</h1>
-        <p className="text-sm text-gray-600 mb-4">Selecciona un rol para navegar por el MVP.</p>
+  const roleOptions = [
+    {
+      value: "client",
+      label: "Cliente",
+      icon: Building2,
+      description: "Busca soluciones de IA para tu empresa",
+    },
+    {
+      value: "provider",
+      label: "Proveedor",
+      icon: Sparkles,
+      description: "Ofrece tus servicios y casos de uso",
+    },
+    {
+      value: "admin",
+      label: "Administrador",
+      icon: UserCog,
+      description: "Gestiona la plataforma",
+    },
+  ];
 
-        <div className="space-y-3">
-          <label className="text-sm">Rol</label>
-          <RoleSelect value={role} onValueChange={setRole} />
+  const selectedOption = roleOptions.find((opt) => opt.value === role);
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-violet-50 via-white to-blue-50 flex items-center justify-center p-6">
+      <div className="w-full max-w-lg">
+        {/* Logo/Title */}
+        <div className="text-center mb-8">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-violet-600 to-purple-600 mb-4 shadow-lg">
+            <Sparkles className="w-8 h-8 text-white" />
+          </div>
+          <h1 className="text-4xl font-bold text-gray-900 mb-2">
+            AI COMPANY CREATOR
+          </h1>
+          <p className="text-gray-600">
+            Plataforma de conexión entre empresas y proveedores de IA
+          </p>
         </div>
 
-        <div className="mt-6">
-          <Button onClick={onEnter} size="3" highContrast>
-            Entrar
-          </Button>
+        {/* Login Card */}
+        <div className="bg-white rounded-2xl border border-gray-200 shadow-xl p-8">
+          <h2 className="text-2xl font-semibold text-gray-900 mb-2">
+            Acceder (Demo)
+          </h2>
+          <p className="text-sm text-gray-600 mb-6">
+            Selecciona un rol para navegar por la plataforma
+          </p>
+
+          <div className="space-y-4">
+            <div>
+              <label className="block text-sm font-medium text-gray-700 mb-2">
+                Rol de acceso
+              </label>
+              <Select.Root
+                value={role}
+                onValueChange={(v) => setRole(v as any)}
+              >
+                <Select.Trigger className="w-full h-12 bg-gray-50 border border-gray-200 hover:border-violet-300 focus:border-violet-500 transition-colors">
+                  <div className="flex items-center gap-3">
+                    {selectedOption && (
+                      <>
+                        <selectedOption.icon className="w-5 h-5 text-violet-600" />
+                        <span className="font-medium">
+                          {selectedOption.label}
+                        </span>
+                      </>
+                    )}
+                  </div>
+                </Select.Trigger>
+                <Select.Content className="bg-white border border-gray-200 shadow-lg rounded-lg">
+                  {roleOptions.map((opt) => {
+                    const Icon = opt.icon;
+                    return (
+                      <Select.Item
+                        key={opt.value}
+                        value={opt.value}
+                        className="px-4 py-3 rounded-lg hover:bg-violet-50 focus:bg-violet-50 cursor-pointer outline-none data-[highlighted]:bg-violet-50"
+                      >
+                        <div className="flex items-center gap-3">
+                          <Icon className="w-5 h-5 text-violet-600" />
+                          <div className="flex-1">
+                            <div className="font-medium text-gray-900">
+                              {opt.label}
+                            </div>
+                            <div className="text-xs text-gray-500 mt-0.5">
+                              {opt.description}
+                            </div>
+                          </div>
+                        </div>
+                      </Select.Item>
+                    );
+                  })}
+                </Select.Content>
+              </Select.Root>
+            </div>
+
+            <div className="pt-4">
+              <Button
+                onClick={onEnter}
+                size="3"
+                className="w-full h-12 bg-gradient-to-r from-violet-600 to-purple-600 hover:from-violet-700 hover:to-purple-700 text-white font-semibold shadow-md hover:shadow-lg transition-all"
+              >
+                Entrar a la plataforma
+              </Button>
+            </div>
+          </div>
+
+          <div className="mt-6 pt-6 border-t border-gray-200">
+            <p className="text-xs text-gray-500 text-center">
+              Esta es una versión demo. Los datos son simulados.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   );
 }
-
-function RoleSelect(props: { value: string; onValueChange: (v: any) => void }) {
-  return (
-    <Select.Root value={props.value} onValueChange={props.onValueChange}>
-      <Select.Trigger className="inline-flex items-center justify-between rounded-md px-3 py-2 bg-gray-200 border border-gray-200 w-full">
-        <Select.Value placeholder="Selecciona un rol" />
-        <Select.Icon>
-          <ChevronDownIcon />
-        </Select.Icon>
-      </Select.Trigger>
-      <Select.Content className="rounded-md bg-[--color-background] border border-gray-200">
-        <Select.Viewport className="p-1">
-          {[
-            { value: "client", label: "Cliente" },
-            { value: "provider", label: "Proveedor" },
-            { value: "admin", label: "Admin" },
-          ].map((opt) => (
-            <Select.Item
-              key={opt.value}
-              value={opt.value}
-              className="px-2 py-2 rounded-md cursor-pointer hover:bg-gray-200 outline-none"
-            >
-              <Select.ItemText>{opt.label}</Select.ItemText>
-              <Select.ItemIndicator>
-                <CheckIcon className="ml-2" />
-              </Select.ItemIndicator>
-            </Select.Item>
-          ))}
-        </Select.Viewport>
-      </Select.Content>
-    </Select.Root>
-  );
-}
-
-

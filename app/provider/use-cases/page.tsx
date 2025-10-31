@@ -8,6 +8,7 @@ import { Button } from "@radix-ui/themes";
 import { Plus, Edit, Trash2, Star, Eye, TrendingUp } from "lucide-react";
 import UseCaseCard from "@/components/shared/UseCaseCard";
 import EmptyState from "@/components/shared/EmptyState";
+import PageLayout from "@/components/shared/PageLayout";
 
 interface UseCase {
   id: string;
@@ -71,8 +72,9 @@ export default function UseCasesPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
-      <div className="mx-auto max-w-7xl px-4 py-8">
+    <PageLayout>
+      <div className="bg-gray-50 min-h-screen">
+        <div className="mx-auto max-w-7xl px-8 py-8">
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-3xl font-bold text-gray-900 mb-2">Mis Casos de Uso</h1>
@@ -159,8 +161,9 @@ export default function UseCasesPage() {
             ))}
           </div>
         )}
+        </div>
       </div>
-    </div>
+    </PageLayout>
   );
 }
 

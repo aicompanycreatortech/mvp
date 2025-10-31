@@ -6,6 +6,7 @@ import { useAuth } from "@/lib/auth";
 import { Button, TextField, TextArea } from "@radix-ui/themes";
 import { Save, Plus, X, ArrowLeft } from "lucide-react";
 import Link from "next/link";
+import PageLayout from "@/components/shared/PageLayout";
 
 const INDUSTRIES = ["Fintech", "Retail", "Manufactura", "Healthcare", "Logística", "Otro"];
 const TECH_OPTIONS = [
@@ -85,8 +86,9 @@ export default function EditUseCasePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
-      <div className="mx-auto max-w-4xl px-4 py-8">
+    <PageLayout>
+      <div className="bg-gray-50 min-h-screen">
+        <div className="mx-auto max-w-4xl px-8 py-8">
         <div className="mb-8">
           <Link href="/provider/use-cases">
             <Button size="2" variant="ghost" className="mb-4">
@@ -209,8 +211,9 @@ export default function EditUseCasePage() {
             </Button>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </PageLayout>
   );
 }
 

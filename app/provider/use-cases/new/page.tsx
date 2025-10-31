@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth";
 import { Button, TextField, TextArea } from "@radix-ui/themes";
 import { Save, Plus, X } from "lucide-react";
+import PageLayout from "@/components/shared/PageLayout";
 
 const INDUSTRIES = ["Fintech", "Retail", "Manufactura", "Healthcare", "Logística", "Otro"];
 const TECH_OPTIONS = [
@@ -96,8 +97,9 @@ export default function NewUseCasePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
-      <div className="mx-auto max-w-4xl px-4 py-8">
+    <PageLayout>
+      <div className="bg-gray-50 min-h-screen">
+        <div className="mx-auto max-w-4xl px-8 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Nuevo Caso de Uso</h1>
           <p className="text-gray-600">Publica un caso de éxito para mostrar a clientes potenciales</p>
@@ -298,8 +300,9 @@ export default function NewUseCasePage() {
             </Button>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </PageLayout>
   );
 }
 

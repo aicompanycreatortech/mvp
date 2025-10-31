@@ -55,8 +55,16 @@ export default function Sidebar() {
       return [
         { label: "Dashboard", href: "/admin", icon: LayoutDashboard },
         { label: "Usuarios", href: "/admin/users", icon: Users },
-        { label: "Suscripciones", href: "/admin/subscriptions", icon: CreditCard },
-        { label: "Transacciones", href: "/admin/transactions", icon: CreditCard },
+        {
+          label: "Suscripciones",
+          href: "/admin/subscriptions",
+          icon: CreditCard,
+        },
+        {
+          label: "Transacciones",
+          href: "/admin/transactions",
+          icon: CreditCard,
+        },
         { label: "Chatbot", href: "/admin/chatbot", icon: Bot },
         { label: "Notificaciones", href: "/admin/notifications", icon: Bell },
       ];
@@ -68,18 +76,13 @@ export default function Sidebar() {
 
   return (
     <aside className="w-64 bg-white border-r border-gray-200 h-screen sticky top-0 flex flex-col">
-      {/* Logo/Header */}
-      <div className="p-6 border-b border-gray-200">
-        <h1 className="text-xl font-bold text-gray-900">AI COMPANY CREATOR</h1>
-        <p className="text-xs text-gray-500 mt-1">{user.role === "client" ? "Cliente" : user.role === "provider" ? "Proveedor" : "Admin"}</p>
-      </div>
-
       {/* Navigation */}
       <nav className="flex-1 overflow-y-auto p-4 space-y-1">
         {navItems.map((item) => {
           const Icon = item.icon;
-          const isActive = pathname === item.href || pathname?.startsWith(item.href + "/");
-          
+          const isActive =
+            pathname === item.href || pathname?.startsWith(item.href + "/");
+
           return (
             <Link
               key={item.href}
@@ -91,7 +94,11 @@ export default function Sidebar() {
               }`}
             >
               <Icon
-                className={`w-5 h-5 ${isActive ? "text-violet-600" : "text-gray-500 group-hover:text-gray-700"}`}
+                className={`w-5 h-5 ${
+                  isActive
+                    ? "text-violet-600"
+                    : "text-gray-500 group-hover:text-gray-700"
+                }`}
               />
               <span className="text-sm font-medium flex-1">{item.label}</span>
               {item.badge && (
@@ -113,7 +120,9 @@ export default function Sidebar() {
             </span>
           </div>
           <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium text-gray-900 truncate">{user.name}</p>
+            <p className="text-sm font-medium text-gray-900 truncate">
+              {user.name}
+            </p>
             <p className="text-xs text-gray-500 truncate">{user.email}</p>
           </div>
         </div>
@@ -121,4 +130,3 @@ export default function Sidebar() {
     </aside>
   );
 }
-

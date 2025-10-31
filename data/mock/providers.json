@@ -23,11 +23,100 @@
       "certifications": ["AWS ML Specialty", "Google Cloud ML"],
       "publications": ["Paper X 2023", "Whitepaper Supply Chain 2024"]
     },
+    "stack": ["Python", "TensorFlow", "AWS SageMaker", "PyTorch", "Docker"],
     "clients": [
       { "name": "RetailCo", "logoUrl": "/globe.svg", "testimonial": "+18% en conversión" },
       { "name": "BankCo", "logoUrl": "/next.svg", "testimonial": "-22% fraude" }
     ]
+  },
+  {
+    "id": "p_dataai",
+    "name": "DataAI Technologies",
+    "logoUrl": "/globe.svg",
+    "website": "https://dataai.example.com",
+    "social": { "linkedin": "https://linkedin.com/company/dataai" },
+    "elevatorPitch": "Especialistas en análisis predictivo y machine learning para transformar datos en decisiones estratégicas.",
+    "valueProp": "Combinamos expertise en ML con conocimiento de negocio para entregar soluciones que impactan directamente en los resultados financieros.",
+    "competences": [
+      "Análisis de Datos",
+      "Machine Learning",
+      "Deep Learning",
+      "Business Intelligence"
+    ],
+    "team": {
+      "aggregateExperienceYears": 68,
+      "members": [
+        { "name": "Carlos Martínez", "role": "CEO", "experienceYears": 20 },
+        { "name": "María González", "role": "Chief Data Scientist", "experienceYears": 16 },
+        { "name": "Roberto Silva", "role": "Lead ML Engineer", "experienceYears": 14 }
+      ],
+      "certifications": ["Microsoft Azure AI", "TensorFlow Certified"],
+      "publications": ["ML in Healthcare 2023", "Predictive Analytics Guide 2024"]
+    },
+    "stack": ["Python", "R", "Azure ML", "Spark", "Kubernetes", "PostgreSQL"],
+    "clients": [
+      { "name": "HealthCorp", "logoUrl": "/window.svg", "testimonial": "Reducción del 30% en costos operativos" },
+      { "name": "TechGlobal", "logoUrl": "/next.svg", "testimonial": "Mejora del 25% en precisión predictiva" }
+    ]
+  },
+  {
+    "id": "p_neuralnet",
+    "name": "NeuralNet Solutions",
+    "logoUrl": "/next.svg",
+    "website": "https://neuralnet.example.com",
+    "social": { "linkedin": "https://linkedin.com/company/neuralnet" },
+    "elevatorPitch": "Innovación en redes neuronales y procesamiento de lenguaje natural para aplicaciones empresariales.",
+    "valueProp": "Desarrollamos modelos de IA customizados que se adaptan perfectamente a las necesidades específicas de cada cliente.",
+    "competences": [
+      "Deep Learning",
+      "NLP",
+      "Computer Vision",
+      "Reinforcement Learning"
+    ],
+    "team": {
+      "aggregateExperienceYears": 45,
+      "members": [
+        { "name": "Dr. Elena Ruiz", "role": "CEO & Founder", "experienceYears": 12 },
+        { "name": "David Chen", "role": "Head of AI Research", "experienceYears": 10 },
+        { "name": "Laura Fernández", "role": "Senior ML Engineer", "experienceYears": 8 }
+      ],
+      "certifications": ["NVIDIA DLI", "OpenAI API Certified"],
+      "publications": ["Neural Networks Journal 2024", "NLP Advances Book"]
+    },
+    "stack": ["PyTorch", "TensorFlow", "Hugging Face", "LangChain", "OpenAI API"],
+    "clients": [
+      { "name": "FinanceHub", "logoUrl": "/globe.svg", "testimonial": "Automatización del 40% de procesos" },
+      { "name": "RetailMax", "logoUrl": "/window.svg", "testimonial": "Mejora del 35% en experiencia de cliente" }
+    ]
+  },
+  {
+    "id": "p_smartml",
+    "name": "SmartML Consulting",
+    "logoUrl": "/window.svg",
+    "website": "https://smartml.example.com",
+    "social": { "linkedin": "https://linkedin.com/company/smartml" },
+    "elevatorPitch": "Consultoría estratégica en IA para empresas que buscan transformación digital inteligente.",
+    "valueProp": "No solo implementamos IA, ayudamos a las empresas a entender y aprovechar al máximo las oportunidades que ofrece la inteligencia artificial.",
+    "competences": [
+      "Consultoría Estratégica",
+      "Transformación Digital",
+      "ML Ops",
+      "Análisis Predictivo"
+    ],
+    "team": {
+      "aggregateExperienceYears": 75,
+      "members": [
+        { "name": "Patricia López", "role": "Managing Partner", "experienceYears": 22 },
+        { "name": "Andrés Pérez", "role": "Principal Consultant", "experienceYears": 18 },
+        { "name": "Carmen Díaz", "role": "ML Ops Lead", "experienceYears": 12 }
+      ],
+      "certifications": ["AWS Professional", "Google Cloud Architect"],
+      "publications": ["Digital Transformation Guide", "ML Ops Best Practices"]
+    },
+    "stack": ["Python", "Kubernetes", "Terraform", "MLflow", "Databricks"],
+    "clients": [
+      { "name": "ManufacturingPro", "logoUrl": "/next.svg", "testimonial": "Optimización del 28% en producción" },
+      { "name": "SupplyChain Co", "logoUrl": "/globe.svg", "testimonial": "Reducción del 20% en inventarios" }
+    ]
   }
 ]
-
-

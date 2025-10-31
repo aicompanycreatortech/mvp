@@ -6,6 +6,7 @@ import { useAuth } from "@/lib/auth";
 import { Button, TextField, TextArea, Select, Dialog } from "@radix-ui/themes";
 import { Mail, Send, Filter, Search, CheckCircle2, MessageSquare, X } from "lucide-react";
 import EmptyState from "@/components/shared/EmptyState";
+import PageLayout from "@/components/shared/PageLayout";
 
 type LeadStatus = "Nuevo" | "Contactado" | "En Negociación" | "Cerrado";
 
@@ -105,8 +106,9 @@ export default function InboxPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
-      <div className="mx-auto max-w-7xl px-4 py-8">
+    <PageLayout>
+      <div className="bg-gray-50 min-h-screen">
+        <div className="mx-auto max-w-7xl px-8 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Buzón de Interacciones</h1>
           <p className="text-gray-600">Gestiona tus leads y conversaciones con clientes</p>
@@ -219,40 +221,41 @@ export default function InboxPage() {
             </div>
           )}
         </div>
+
+        <Dialog.Root open={showReplyDialog} onOpenChange={setShowReplyDialog}>
+          <Dialog.Content className="max-w-2xl">
+            <Dialog.Title>Responder a {selectedLead?.clientName}</Dialog.Title>
+            <Dialog.Description className="mb-4">
+              Envía un mensaje al cliente a través de la plataforma (mock)
+            </Dialog.Description>
+
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-900 mb-2">Mensaje</label>
+                <TextArea
+                  value={replyText}
+                  onChange={(e) => setReplyText(e.target.value)}
+                  placeholder="Escribe tu respuesta..."
+                  rows={6}
+                  className="w-full"
+                />
+              </div>
+
+              <div className="flex justify-end gap-3">
+                <Button variant="soft" onClick={() => setShowReplyDialog(false)}>
+                  Cancelar
+                </Button>
+                <Button onClick={handleReply} disabled={sending || !replyText.trim()}>
+                  <Send className="w-4 h-4 mr-2" />
+                  {sending ? "Enviando..." : "Enviar correo"}
+                </Button>
+              </div>
+            </div>
+          </Dialog.Content>
+        </Dialog.Root>
+        </div>
       </div>
-
-      <Dialog.Root open={showReplyDialog} onOpenChange={setShowReplyDialog}>
-        <Dialog.Content className="max-w-2xl">
-          <Dialog.Title>Responder a {selectedLead?.clientName}</Dialog.Title>
-          <Dialog.Description className="mb-4">
-            Envía un mensaje al cliente a través de la plataforma (mock)
-          </Dialog.Description>
-
-          <div className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-900 mb-2">Mensaje</label>
-              <TextArea
-                value={replyText}
-                onChange={(e) => setReplyText(e.target.value)}
-                placeholder="Escribe tu respuesta..."
-                rows={6}
-                className="w-full"
-              />
-            </div>
-
-            <div className="flex justify-end gap-3">
-              <Button variant="soft" onClick={() => setShowReplyDialog(false)}>
-                Cancelar
-              </Button>
-              <Button onClick={handleReply} disabled={sending || !replyText.trim()}>
-                <Send className="w-4 h-4 mr-2" />
-                {sending ? "Enviando..." : "Enviar correo"}
-              </Button>
-            </div>
-          </div>
-        </Dialog.Content>
-      </Dialog.Root>
-    </div>
+    </PageLayout>
   );
 }
 

@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth";
 import { Button, TextField, TextArea } from "@radix-ui/themes";
 import { Save, Upload, Plus, X, Link as LinkIcon, Building2 } from "lucide-react";
+import PageLayout from "@/components/shared/PageLayout";
 
 interface ProviderProfile {
   name: string;
@@ -138,8 +139,9 @@ export default function ProviderProfilePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
-      <div className="mx-auto max-w-4xl px-4 py-8">
+    <PageLayout>
+      <div className="bg-gray-50 min-h-screen">
+        <div className="mx-auto max-w-4xl px-8 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Perfil de Empresa</h1>
           <p className="text-gray-600">Gestiona la información de tu empresa y equipo</p>
@@ -434,8 +436,9 @@ export default function ProviderProfilePage() {
             </Button>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </PageLayout>
   );
 }
 

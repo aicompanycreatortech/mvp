@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth";
 import { Button, TextArea, Tabs } from "@radix-ui/themes";
 import { Mail, Save } from "lucide-react";
+import PageLayout from "@/components/shared/PageLayout";
 
 export default function NotificationsPage() {
   const { user } = useAuth();
@@ -38,8 +39,9 @@ export default function NotificationsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
-      <div className="mx-auto max-w-4xl px-4 py-8">
+    <PageLayout>
+      <div className="bg-gray-50 min-h-screen">
+        <div className="mx-auto max-w-4xl px-8 py-8">
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">
             <Mail className="w-6 h-6 text-gray-900" />
@@ -107,8 +109,9 @@ export default function NotificationsPage() {
             </div>
           </Tabs.Content>
         </Tabs.Root>
+        </div>
       </div>
-    </div>
+    </PageLayout>
   );
 }
 

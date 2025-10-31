@@ -2,12 +2,83 @@
   {
     "id": "lead_001",
     "clientUserId": "u_client_1",
+    "clientName": "HP",
     "providerId": "p_aisol",
     "useCaseId": "uc_supply_opt",
-    "message": "Estamos interesados en optimizar logística en EMEA",
+    "useCaseTitle": "Optimización de cadena de suministro con IA predictiva",
+    "message": "Estamos interesados en optimizar nuestra logística en EMEA. ¿Podrían proporcionarnos más detalles sobre el caso de uso de cadena de suministro?",
+    "status": "Contactado",
+    "createdAt": "2025-01-28T10:15:00Z",
+    "lastMessage": "Hemos revisado su solicitud y podemos ayudarle. Nuestro equipo tiene experiencia específica en optimización logística para empresas multinacionales."
+  },
+  {
+    "id": "lead_002",
+    "clientUserId": "u_client_1",
+    "clientName": "HP",
+    "providerId": "p_neuralnet",
+    "useCaseId": "uc_sentiment_analysis",
+    "useCaseTitle": "Análisis de sentimiento en tiempo real",
+    "message": "Necesitamos mejorar nuestro servicio de atención al cliente. El caso de análisis de sentimiento parece muy relevante para nuestra operación.",
     "status": "Nuevo",
-    "createdAt": "2025-10-30T10:15:00Z"
+    "createdAt": "2025-01-30T14:30:00Z"
+  },
+  {
+    "id": "lead_003",
+    "clientUserId": "u_client_2",
+    "clientName": "IBM Corporation",
+    "providerId": "p_dataai",
+    "useCaseId": "uc_healthcare_diagnosis",
+    "useCaseTitle": "Asistente de diagnóstico médico con IA",
+    "message": "Interesados en explorar soluciones de IA para nuestro departamento de healthcare. ¿Podrían organizar una demo?",
+    "status": "En Negociación",
+    "createdAt": "2025-01-25T09:00:00Z",
+    "lastMessage": "Hemos preparado una propuesta detallada. ¿Cuándo sería un buen momento para revisarla juntos?"
+  },
+  {
+    "id": "lead_004",
+    "clientUserId": "u_client_3",
+    "clientName": "Microsoft",
+    "providerId": "p_smartml",
+    "useCaseId": "uc_predictive_maintenance",
+    "useCaseTitle": "Mantenimiento predictivo de equipos industriales",
+    "message": "Buscamos soluciones de mantenimiento predictivo para nuestros data centers. El caso de uso de mantenimiento predictivo es exactamente lo que necesitamos.",
+    "status": "Cerrado",
+    "createdAt": "2025-01-20T11:45:00Z",
+    "lastMessage": "Gracias por confiar en nosotros. Estamos emocionados de comenzar la implementación."
+  },
+  {
+    "id": "lead_005",
+    "clientUserId": "u_client_2",
+    "clientName": "IBM Corporation",
+    "providerId": "p_aisol",
+    "useCaseId": "uc_fraud",
+    "useCaseTitle": "Detección de fraude en tiempo real",
+    "message": "Tenemos un problema creciente con transacciones fraudulentas. ¿Su solución puede procesar más de 1 millón de transacciones diarias?",
+    "status": "Contactado",
+    "createdAt": "2025-01-29T16:20:00Z",
+    "lastMessage": "Sí, nuestra solución está diseñada para escalar. Puede procesar más de 10 millones de transacciones diarias con latencia sub-100ms."
+  },
+  {
+    "id": "lead_006",
+    "clientUserId": "u_client_4",
+    "clientName": "Amazon",
+    "providerId": "p_dataai",
+    "useCaseId": "uc_customer_churn",
+    "useCaseTitle": "Predicción de abandono de clientes",
+    "message": "Interesados en implementar un sistema de predicción de churn para nuestros clientes de AWS. ¿Cuál sería el timeline típico?",
+    "status": "Nuevo",
+    "createdAt": "2025-01-30T08:00:00Z"
+  },
+  {
+    "id": "lead_007",
+    "clientUserId": "u_client_1",
+    "clientName": "HP",
+    "providerId": "p_neuralnet",
+    "useCaseId": "uc_price_optimization",
+    "useCaseTitle": "Optimización dinámica de precios con IA",
+    "message": "Estamos evaluando diferentes proveedores para optimización de precios. ¿Tienen casos de éxito en el sector tecnológico?",
+    "status": "Contactado",
+    "createdAt": "2025-01-27T13:15:00Z",
+    "lastMessage": "Tenemos varios casos de éxito. Podemos organizar una llamada con nuestro equipo de casos de éxito para compartir detalles."
   }
 ]
-
-

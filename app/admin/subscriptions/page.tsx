@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth";
 import { Button, TextField, Dialog } from "@radix-ui/themes";
 import { DollarSign, Plus, Edit, Trash2 } from "lucide-react";
+import PageLayout from "@/components/shared/PageLayout";
 
 interface SubscriptionPlan {
   id: string;
@@ -35,8 +36,9 @@ export default function SubscriptionsPage() {
   }, [user, router]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
-      <div className="mx-auto max-w-7xl px-4 py-8">
+    <PageLayout>
+      <div className="bg-gray-50 min-h-screen">
+        <div className="mx-auto max-w-7xl px-8 py-8">
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-3xl font-bold text-gray-900 mb-2">Planes de Suscripción</h1>
@@ -92,30 +94,31 @@ export default function SubscriptionsPage() {
             </div>
           ))}
         </div>
-      </div>
 
-      <Dialog.Root open={showDialog} onOpenChange={setShowDialog}>
-        <Dialog.Content>
-          <Dialog.Title>{editingPlan ? "Editar Plan" : "Crear Plan"}</Dialog.Title>
-          <div className="space-y-4 mt-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-900 mb-2">Nombre</label>
-              <TextField.Root placeholder="Ej: Pro" className="w-full" />
+        <Dialog.Root open={showDialog} onOpenChange={setShowDialog}>
+          <Dialog.Content>
+            <Dialog.Title>{editingPlan ? "Editar Plan" : "Crear Plan"}</Dialog.Title>
+            <div className="space-y-4 mt-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-900 mb-2">Nombre</label>
+                <TextField.Root placeholder="Ej: Pro" className="w-full" />
+              </div>
+              <div>
+                <label className="block text-sm font-medium text-gray-900 mb-2">Precio (USD/mes)</label>
+                <TextField.Root type="number" placeholder="199" className="w-full" />
+              </div>
+              <div className="flex justify-end gap-3 mt-6">
+                <Button variant="soft" onClick={() => setShowDialog(false)}>
+                  Cancelar
+                </Button>
+                <Button onClick={() => setShowDialog(false)}>Guardar</Button>
+              </div>
             </div>
-            <div>
-              <label className="block text-sm font-medium text-gray-900 mb-2">Precio (USD/mes)</label>
-              <TextField.Root type="number" placeholder="199" className="w-full" />
-            </div>
-            <div className="flex justify-end gap-3 mt-6">
-              <Button variant="soft" onClick={() => setShowDialog(false)}>
-                Cancelar
-              </Button>
-              <Button onClick={() => setShowDialog(false)}>Guardar</Button>
-            </div>
-          </div>
-        </Dialog.Content>
-      </Dialog.Root>
-    </div>
+          </Dialog.Content>
+        </Dialog.Root>
+        </div>
+      </div>
+    </PageLayout>
   );
 }
 

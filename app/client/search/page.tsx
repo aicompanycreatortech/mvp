@@ -6,6 +6,7 @@ import { useAuth } from "@/lib/auth";
 import { Button, TextField } from "@radix-ui/themes";
 import { Search, Filter, TrendingUp } from "lucide-react";
 import UseCaseCard from "@/components/shared/UseCaseCard";
+import PageLayout from "@/components/shared/PageLayout";
 import chatbotData from "@/data/mock/chatbotData.json";
 
 interface SearchResult {
@@ -141,8 +142,9 @@ function SearchResultsContent() {
   });
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
-      <div className="mx-auto max-w-7xl px-4 py-8">
+    <PageLayout>
+      <div className="bg-gray-50 min-h-screen">
+        <div className="mx-auto max-w-7xl px-8 py-8">
         <div className="mb-8">
           <div className="flex items-center gap-4 mb-4">
             <Search className="w-6 h-6 text-gray-600" />
@@ -247,8 +249,9 @@ function SearchResultsContent() {
             )}
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </PageLayout>
   );
 }
 

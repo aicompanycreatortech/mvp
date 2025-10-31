@@ -6,6 +6,7 @@ import { useAuth } from "@/lib/auth";
 import { Button, Select } from "@radix-ui/themes";
 import { MessageSquare, Building2, Clock, CheckCircle2 } from "lucide-react";
 import EmptyState from "@/components/shared/EmptyState";
+import PageLayout from "@/components/shared/PageLayout";
 
 type ContactStatus = "Nuevo" | "Contactado" | "En Negociación" | "Cerrado";
 
@@ -55,8 +56,9 @@ export default function ContactsPage() {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
-      <div className="mx-auto max-w-6xl px-4 py-8">
+    <PageLayout>
+      <div className="bg-gray-50 min-h-screen">
+        <div className="mx-auto max-w-6xl px-8 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Estado de Contactos</h1>
           <p className="text-gray-600">Sigue tus conversaciones con proveedores</p>
@@ -124,8 +126,9 @@ export default function ContactsPage() {
             ))}
           </div>
         )}
+        </div>
       </div>
-    </div>
+    </PageLayout>
   );
 }
 

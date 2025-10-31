@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth";
 import { Button, Tabs, Switch, Dialog, TextField, Select } from "@radix-ui/themes";
 import { Users, Edit, CheckCircle2, XCircle, Building2 } from "lucide-react";
+import PageLayout from "@/components/shared/PageLayout";
 
 type UserRole = "client" | "provider" | "admin";
 
@@ -54,8 +55,9 @@ export default function UsersPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
-      <div className="mx-auto max-w-7xl px-4 py-8">
+    <PageLayout>
+      <div className="bg-gray-50 min-h-screen">
+        <div className="mx-auto max-w-7xl px-8 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Gestión de Usuarios</h1>
           <p className="text-gray-600">Administra clientes, proveedores y administradores</p>
@@ -128,43 +130,44 @@ export default function UsersPage() {
             </table>
           </div>
         </Tabs.Root>
-      </div>
 
-      <Dialog.Root open={showEditDialog} onOpenChange={setShowEditDialog}>
-        <Dialog.Content>
-          <Dialog.Title>Editar Usuario</Dialog.Title>
-          {selectedUser && (
-            <div className="space-y-4 mt-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-900 mb-2">Nombre</label>
-                <TextField.Root value={selectedUser.name} className="w-full" />
+        <Dialog.Root open={showEditDialog} onOpenChange={setShowEditDialog}>
+          <Dialog.Content>
+            <Dialog.Title>Editar Usuario</Dialog.Title>
+            {selectedUser && (
+              <div className="space-y-4 mt-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-900 mb-2">Nombre</label>
+                  <TextField.Root value={selectedUser.name} className="w-full" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-900 mb-2">Email</label>
+                  <TextField.Root value={selectedUser.email} className="w-full" />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-900 mb-2">Rol</label>
+                  <Select.Root value={selectedUser.role}>
+                    <Select.Trigger className="w-full" />
+                    <Select.Content>
+                      <Select.Item value="client">Cliente</Select.Item>
+                      <Select.Item value="provider">Proveedor</Select.Item>
+                      <Select.Item value="admin">Admin</Select.Item>
+                    </Select.Content>
+                  </Select.Root>
+                </div>
+                <div className="flex justify-end gap-3 mt-6">
+                  <Button variant="soft" onClick={() => setShowEditDialog(false)}>
+                    Cancelar
+                  </Button>
+                  <Button onClick={() => setShowEditDialog(false)}>Guardar</Button>
+                </div>
               </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-900 mb-2">Email</label>
-                <TextField.Root value={selectedUser.email} className="w-full" />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-900 mb-2">Rol</label>
-                <Select.Root value={selectedUser.role}>
-                  <Select.Trigger className="w-full" />
-                  <Select.Content>
-                    <Select.Item value="client">Cliente</Select.Item>
-                    <Select.Item value="provider">Proveedor</Select.Item>
-                    <Select.Item value="admin">Admin</Select.Item>
-                  </Select.Content>
-                </Select.Root>
-              </div>
-              <div className="flex justify-end gap-3 mt-6">
-                <Button variant="soft" onClick={() => setShowEditDialog(false)}>
-                  Cancelar
-                </Button>
-                <Button onClick={() => setShowEditDialog(false)}>Guardar</Button>
-              </div>
-            </div>
-          )}
-        </Dialog.Content>
-      </Dialog.Root>
-    </div>
+            )}
+          </Dialog.Content>
+        </Dialog.Root>
+        </div>
+      </div>
+    </PageLayout>
   );
 }
 

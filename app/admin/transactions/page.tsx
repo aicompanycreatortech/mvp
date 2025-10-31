@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { useAuth } from "@/lib/auth";
 import { TextField, Select } from "@radix-ui/themes";
 import { DollarSign, Search, Filter } from "lucide-react";
+import PageLayout from "@/components/shared/PageLayout";
 
 interface Transaction {
   id: string;
@@ -54,8 +55,9 @@ export default function TransactionsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
-      <div className="mx-auto max-w-7xl px-4 py-8">
+    <PageLayout>
+      <div className="bg-gray-50 min-h-screen">
+        <div className="mx-auto max-w-7xl px-8 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Transacciones</h1>
           <p className="text-gray-600">Registro de todos los pagos y facturas</p>
@@ -115,8 +117,9 @@ export default function TransactionsPage() {
             </tbody>
           </table>
         </div>
+        </div>
       </div>
-    </div>
+    </PageLayout>
   );
 }
 

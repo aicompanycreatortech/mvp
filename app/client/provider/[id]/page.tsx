@@ -7,6 +7,7 @@ import { Button, Tabs, Dialog, TextArea } from "@radix-ui/themes";
 import { Building2, ExternalLink, MessageSquare, Star, Users, Code, Award } from "lucide-react";
 import Link from "next/link";
 import UseCaseCard from "@/components/shared/UseCaseCard";
+import PageLayout from "@/components/shared/PageLayout";
 
 export default function ProviderProfilePage() {
   const { user } = useAuth();
@@ -100,8 +101,9 @@ export default function ProviderProfilePage() {
   if (!provider) return null;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
-      <div className="mx-auto max-w-6xl px-4 py-8">
+    <PageLayout>
+      <div className="bg-gray-50 min-h-screen">
+        <div className="mx-auto max-w-6xl px-8 py-8">
         {/* Hero Section */}
         <div className="bg-gray-100 border border-gray-200 rounded-xl p-8 mb-8">
           <div className="flex items-start gap-6">
@@ -309,40 +311,41 @@ export default function ProviderProfilePage() {
             </div>
           </Tabs.Content>
         </Tabs.Root>
+
+        <Dialog.Root open={showContactDialog} onOpenChange={setShowContactDialog}>
+          <Dialog.Content className="max-w-2xl">
+            <Dialog.Title>Contactar a {provider.name}</Dialog.Title>
+            <Dialog.Description className="mb-4">
+              Envía un mensaje al proveedor a través de la plataforma
+            </Dialog.Description>
+
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-medium text-gray-900 mb-2">Mensaje</label>
+                <TextArea
+                  value={contactMessage}
+                  onChange={(e) => setContactMessage(e.target.value)}
+                  placeholder="Escribe tu mensaje..."
+                  rows={6}
+                  className="w-full"
+                />
+              </div>
+
+              <div className="flex justify-end gap-3">
+                <Button variant="soft" onClick={() => setShowContactDialog(false)}>
+                  Cancelar
+                </Button>
+                <Button onClick={handleContact} disabled={sending || !contactMessage.trim()}>
+                  <MessageSquare className="w-4 h-4 mr-2" />
+                  {sending ? "Enviando..." : "Enviar mensaje"}
+                </Button>
+              </div>
+            </div>
+          </Dialog.Content>
+        </Dialog.Root>
+        </div>
       </div>
-
-      <Dialog.Root open={showContactDialog} onOpenChange={setShowContactDialog}>
-        <Dialog.Content className="max-w-2xl">
-          <Dialog.Title>Contactar a {provider.name}</Dialog.Title>
-          <Dialog.Description className="mb-4">
-            Envía un mensaje al proveedor a través de la plataforma
-          </Dialog.Description>
-
-          <div className="space-y-4">
-            <div>
-              <label className="block text-sm font-medium text-gray-900 mb-2">Mensaje</label>
-              <TextArea
-                value={contactMessage}
-                onChange={(e) => setContactMessage(e.target.value)}
-                placeholder="Escribe tu mensaje..."
-                rows={6}
-                className="w-full"
-              />
-            </div>
-
-            <div className="flex justify-end gap-3">
-              <Button variant="soft" onClick={() => setShowContactDialog(false)}>
-                Cancelar
-              </Button>
-              <Button onClick={handleContact} disabled={sending || !contactMessage.trim()}>
-                <MessageSquare className="w-4 h-4 mr-2" />
-                {sending ? "Enviando..." : "Enviar mensaje"}
-              </Button>
-            </div>
-          </div>
-        </Dialog.Content>
-      </Dialog.Root>
-    </div>
+    </PageLayout>
   );
 }
 

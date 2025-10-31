@@ -6,6 +6,7 @@ import { useAuth } from "@/lib/auth";
 import { Button } from "@radix-ui/themes";
 import { ArrowLeft, Building2, TrendingUp, ExternalLink, MessageSquare } from "lucide-react";
 import Link from "next/link";
+import PageLayout from "@/components/shared/PageLayout";
 
 export default function UseCaseDetailPage() {
   const { user } = useAuth();
@@ -44,8 +45,9 @@ export default function UseCaseDetailPage() {
   if (!useCase) return null;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-50">
-      <div className="mx-auto max-w-4xl px-4 py-8">
+    <PageLayout>
+      <div className="bg-gray-50 min-h-screen">
+        <div className="mx-auto max-w-4xl px-8 py-8">
         <Link href="/client">
           <Button size="2" variant="ghost" className="mb-6">
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -141,8 +143,9 @@ export default function UseCaseDetailPage() {
             </div>
           </div>
         </div>
+        </div>
       </div>
-    </div>
+    </PageLayout>
   );
 }
 

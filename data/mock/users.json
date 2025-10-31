@@ -2,26 +2,80 @@
   {
     "id": "u_admin_1",
     "name": "Admin Demo",
-    "email": "admin@example.com",
+    "email": "admin@aicompanycreator.com",
     "role": "admin",
     "active": true
   },
   {
+    "id": "u_client_1",
+    "name": "HP",
+    "email": "contact@hp.com",
+    "role": "client",
+    "active": true,
+    "company": "HP"
+  },
+  {
+    "id": "u_client_2",
+    "name": "IBM Corporation",
+    "email": "ai@ibm.com",
+    "role": "client",
+    "active": true,
+    "company": "IBM"
+  },
+  {
+    "id": "u_client_3",
+    "name": "Microsoft",
+    "email": "enterprise@microsoft.com",
+    "role": "client",
+    "active": true,
+    "company": "Microsoft"
+  },
+  {
+    "id": "u_client_4",
+    "name": "Amazon",
+    "email": "business@amazon.com",
+    "role": "client",
+    "active": true,
+    "company": "Amazon"
+  },
+  {
     "id": "u_provider_1",
     "name": "AI Solutions Inc.",
-    "email": "provider@example.com",
+    "email": "contact@aisolutions.com",
     "role": "provider",
     "active": true,
     "providerId": "p_aisol"
   },
   {
-    "id": "u_client_1",
-    "name": "HP",
-    "email": "client@example.com",
-    "role": "client",
+    "id": "u_provider_2",
+    "name": "DataAI Technologies",
+    "email": "hello@dataai.com",
+    "role": "provider",
     "active": true,
-    "company": "HP"
+    "providerId": "p_dataai"
+  },
+  {
+    "id": "u_provider_3",
+    "name": "NeuralNet Solutions",
+    "email": "info@neuralnet.com",
+    "role": "provider",
+    "active": true,
+    "providerId": "p_neuralnet"
+  },
+  {
+    "id": "u_provider_4",
+    "name": "SmartML Consulting",
+    "email": "contact@smartml.com",
+    "role": "provider",
+    "active": true,
+    "providerId": "p_smartml"
+  },
+  {
+    "id": "u_provider_5",
+    "name": "ML Innovations",
+    "email": "team@mlinnovations.com",
+    "role": "provider",
+    "active": false,
+    "providerId": "p_mlinnovations"
   }
 ]
-
-
