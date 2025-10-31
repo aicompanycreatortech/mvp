@@ -1,0 +1,44 @@
+{
+  "intents": [
+    {
+      "id": "opt_logistica",
+      "keywords": ["logística", "entrega", "supply", "cadena", "tiempos"],
+      "followUps": [
+        {
+          "q": "¿En qué industria te encuentras?",
+          "options": ["Retail", "Manufactura", "Fintech", "Otra"],
+          "key": "industry"
+        },
+        {
+          "q": "¿Cuál es tu principal KPI a mejorar?",
+          "options": ["Costes", "Lead time", "SLA"],
+          "key": "kpi"
+        }
+      ],
+      "mapping": {
+        "matchUseCases": ["uc_supply_opt"]
+      }
+    },
+    {
+      "id": "fraude_fintech",
+      "keywords": ["fraude", "transacciones", "fintech", "pérdidas"],
+      "followUps": [
+        {
+          "q": "¿Volumen de transacciones mensual?",
+          "options": ["< 1M", "1-10M", "> 10M"],
+          "key": "volume"
+        }
+      ],
+      "mapping": {
+        "matchUseCases": ["uc_fraud"]
+      }
+    }
+  ],
+  "scoring": {
+    "keywordWeight": 0.6,
+    "industryWeight": 0.25,
+    "technologyWeight": 0.15
+  }
+}
+
+

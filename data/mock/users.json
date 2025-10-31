@@ -1,0 +1,27 @@
+[
+  {
+    "id": "u_admin_1",
+    "name": "Admin Demo",
+    "email": "admin@example.com",
+    "role": "admin",
+    "active": true
+  },
+  {
+    "id": "u_provider_1",
+    "name": "AI Solutions Inc.",
+    "email": "provider@example.com",
+    "role": "provider",
+    "active": true,
+    "providerId": "p_aisol"
+  },
+  {
+    "id": "u_client_1",
+    "name": "HP",
+    "email": "client@example.com",
+    "role": "client",
+    "active": true,
+    "company": "HP"
+  }
+]
+
+

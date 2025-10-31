@@ -1,0 +1,33 @@
+[
+  {
+    "id": "p_aisol",
+    "name": "AI Solutions Inc.",
+    "logoUrl": "/vercel.svg",
+    "website": "https://example.com",
+    "social": { "linkedin": "https://linkedin.com/company/aisolutions" },
+    "elevatorPitch": "Soluciones de IA de punta a punta para optimizar operaciones y crecimiento.",
+    "valueProp": "Integramos modelos generativos y predictivos con procesos del cliente para ROI rápido.",
+    "competences": [
+      "Procesamiento de Lenguaje Natural",
+      "Visión por Computador",
+      "Modelos Predictivos",
+      "IA Generativa"
+    ],
+    "team": {
+      "aggregateExperienceYears": 52,
+      "members": [
+        { "name": "Ana CEO", "role": "CEO", "experienceYears": 15 },
+        { "name": "Luis CTO", "role": "CTO", "experienceYears": 18 },
+        { "name": "Sofía DS", "role": "Lead Data Scientist", "experienceYears": 12 }
+      ],
+      "certifications": ["AWS ML Specialty", "Google Cloud ML"],
+      "publications": ["Paper X 2023", "Whitepaper Supply Chain 2024"]
+    },
+    "clients": [
+      { "name": "RetailCo", "logoUrl": "/globe.svg", "testimonial": "+18% en conversión" },
+      { "name": "BankCo", "logoUrl": "/next.svg", "testimonial": "-22% fraude" }
+    ]
+  }
+]
+
+

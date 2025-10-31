@@ -1,0 +1,30 @@
+[
+  {
+    "id": "uc_supply_opt",
+    "providerId": "p_aisol",
+    "title": "Optimización de cadena de suministro con IA predictiva (-15% costes)",
+    "problem": "Ineficiencias en inventario y tiempos de entrega largos.",
+    "solution": "Modelos de demanda con LSTM + optimización con Programación Lineal en AWS SageMaker.",
+    "results": { "roi": 2.4, "costReductionPct": 15, "leadTimeReductionPct": 22 },
+    "industry": ["Manufactura", "Retail"],
+    "technologies": ["Python", "TensorFlow", "AWS SageMaker"],
+    "kpis": ["ROI", "Reducción de costes", "Lead time"],
+    "views": 128,
+    "featured": true
+  },
+  {
+    "id": "uc_fraud",
+    "providerId": "p_aisol",
+    "title": "Detección de fraude en tiempo real (-22% pérdidas)",
+    "problem": "Altos niveles de transacciones fraudulentas.",
+    "solution": "GNN + XGBoost con streaming en Kafka.",
+    "results": { "fraudLossReductionPct": 22, "precision": 0.91 },
+    "industry": ["Fintech"],
+    "technologies": ["Python", "XGBoost", "Kafka"],
+    "kpis": ["Precision", "Pérdidas evitadas"],
+    "views": 86,
+    "featured": false
+  }
+]
+
+

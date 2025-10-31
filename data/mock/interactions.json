@@ -1,0 +1,13 @@
+[
+  {
+    "id": "lead_001",
+    "clientUserId": "u_client_1",
+    "providerId": "p_aisol",
+    "useCaseId": "uc_supply_opt",
+    "message": "Estamos interesados en optimizar logística en EMEA",
+    "status": "Nuevo",
+    "createdAt": "2025-10-30T10:15:00Z"
+  }
+]
+
+
