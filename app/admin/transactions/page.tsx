@@ -56,7 +56,7 @@ export default function TransactionsPage() {
 
   return (
     <PageLayout>
-      <div className="bg-gray-50 min-h-screen">
+      <div className="bg-gray-50">
         <div className="mx-auto max-w-7xl px-8 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Transacciones</h1>
@@ -83,21 +83,26 @@ export default function TransactionsPage() {
         </div>
 
         <div className="bg-gray-100 border border-gray-200 rounded-xl overflow-hidden">
-          <table className="w-full">
-            <thead className="bg-gray-100">
-              <tr>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Proveedor</th>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Plan</th>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Monto</th>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Fecha</th>
-                <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Estado</th>
-              </tr>
-            </thead>
-            <tbody>
-              {transactions.map((tx) => (
-                <tr key={tx.id} className="border-t border-gray-200 hover:bg-gray-100 transition-colors">
-                  <td className="px-6 py-4 text-gray-900">{tx.provider}</td>
-                  <td className="px-6 py-4 text-gray-600">{tx.plan}</td>
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[640px]">
+              <thead className="bg-gray-100">
+                <tr>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Proveedor</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Plan</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Monto</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Fecha</th>
+                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Estado</th>
+                </tr>
+              </thead>
+              <tbody>
+                {transactions.map((tx) => (
+                  <tr key={tx.id} className="border-t border-gray-200 hover:bg-gray-100 transition-colors">
+                    <td className="px-6 py-4">
+                      <span className="text-gray-900 truncate block max-w-[200px]">{tx.provider}</span>
+                    </td>
+                    <td className="px-6 py-4 text-gray-600">
+                      <span className="truncate block max-w-[150px]">{tx.plan}</span>
+                    </td>
                   <td className="px-6 py-4">
                     <div className="flex items-center gap-2">
                       <DollarSign className="w-4 h-4 text-gray-600" />
@@ -116,6 +121,7 @@ export default function TransactionsPage() {
               ))}
             </tbody>
           </table>
+          </div>
         </div>
         </div>
       </div>

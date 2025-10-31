@@ -140,7 +140,7 @@ export default function ProviderProfilePage() {
 
   return (
     <PageLayout>
-      <div className="bg-gray-50 min-h-screen">
+      <div className="bg-gray-50">
         <div className="mx-auto max-w-4xl px-8 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Perfil de Empresa</h1>
@@ -237,16 +237,17 @@ export default function ProviderProfilePage() {
           {/* Competencias Clave */}
           <div className="bg-gray-100 border border-gray-200 rounded-xl p-6">
             <h2 className="text-xl font-semibold text-gray-900 mb-6">Competencias Clave</h2>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 overflow-hidden">
               {AVAILABLE_COMPETENCES.map((comp) => (
                 <button
                   key={comp}
                   onClick={() => toggleCompetence(comp)}
-                  className={`px-4 py-2 rounded-lg border transition-all ${
+                  className={`px-4 py-2 rounded-lg border transition-all truncate max-w-full ${
                     profile.competences.includes(comp)
                       ? "bg-violet-500/20 border-violet-500/50 text-violet-700"
                       : "bg-gray-100 border-gray-200 text-gray-600 hover:bg-gray-200"
                   }`}
+                  title={comp}
                 >
                   {comp}
                 </button>

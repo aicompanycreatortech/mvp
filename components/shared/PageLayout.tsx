@@ -2,6 +2,7 @@
 
 import { useAuth } from "@/lib/auth";
 import Sidebar from "./Sidebar";
+import TopNav from "./TopNav";
 
 export default function PageLayout({ children }: { children: React.ReactNode }) {
   const { user } = useAuth();
@@ -9,11 +10,14 @@ export default function PageLayout({ children }: { children: React.ReactNode }) 
   if (!user) return <>{children}</>;
 
   return (
-    <div className="flex min-h-screen bg-gray-50">
+    <div className="flex h-screen bg-gray-50 overflow-hidden w-full">
       <Sidebar />
-      <main className="flex-1 overflow-x-hidden">
-        {children}
-      </main>
+      <div className="flex-1 flex flex-col min-w-0 overflow-hidden max-w-full">
+        <TopNav />
+        <main className="flex-1 overflow-y-auto overflow-x-hidden w-full">
+          {children}
+        </main>
+      </div>
     </div>
   );
 }

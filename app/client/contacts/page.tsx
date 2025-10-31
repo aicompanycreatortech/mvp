@@ -57,7 +57,7 @@ export default function ContactsPage() {
 
   return (
     <PageLayout>
-      <div className="bg-gray-50 min-h-screen">
+      <div className="bg-gray-50">
         <div className="mx-auto max-w-6xl px-8 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Estado de Contactos</h1>
@@ -92,27 +92,27 @@ export default function ContactsPage() {
                 key={contact.id}
                 className="bg-gray-100 border border-gray-200 rounded-xl p-6 hover:bg-gray-200 transition-all"
               >
-                <div className="flex items-start justify-between mb-4">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-lg bg-gray-200 flex items-center justify-center">
+                <div className="flex items-start justify-between mb-4 gap-4 flex-wrap">
+                  <div className="flex items-center gap-4 flex-1 min-w-0">
+                    <div className="w-12 h-12 rounded-lg bg-gray-200 flex items-center justify-center flex-shrink-0">
                       <Building2 className="w-6 h-6 text-gray-600" />
                     </div>
-                    <div>
-                      <h3 className="text-lg font-semibold text-gray-900">{contact.providerName}</h3>
+                    <div className="flex-1 min-w-0">
+                      <h3 className="text-lg font-semibold text-gray-900 truncate">{contact.providerName}</h3>
                       <p className="text-sm text-gray-500">
                         {new Date(contact.createdAt).toLocaleDateString("es-ES")}
                       </p>
                     </div>
                   </div>
                   <span
-                    className={`px-3 py-1 rounded-lg text-xs font-medium border ${statusColors[contact.status]}`}
+                    className={`px-3 py-1 rounded-lg text-xs font-medium border ${statusColors[contact.status]} flex-shrink-0`}
                   >
                     {contact.status}
                   </span>
                 </div>
 
                 <div className="bg-gray-100 rounded-lg p-4 mb-4 border border-gray-200">
-                  <p className="text-sm text-gray-900">{contact.message}</p>
+                  <p className="text-sm text-gray-900 break-words whitespace-pre-wrap">{contact.message}</p>
                 </div>
 
                 <Button

@@ -198,7 +198,7 @@ function SearchResultsContent() {
 
   return (
     <PageLayout>
-      <div className="bg-gray-50 min-h-screen">
+          <div className="bg-gray-50">
         <div className="mx-auto max-w-7xl px-8 py-8">
           <div className="mb-8">
             <div className="flex items-center gap-4 mb-4">

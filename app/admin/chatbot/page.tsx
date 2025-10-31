@@ -35,7 +35,7 @@ export default function ChatbotConfigPage() {
 
   return (
     <PageLayout>
-      <div className="bg-gray-50 min-h-screen">
+      <div className="bg-gray-50">
         <div className="mx-auto max-w-4xl px-8 py-8">
         <div className="mb-8">
           <div className="flex items-center gap-3 mb-2">
@@ -47,7 +47,7 @@ export default function ChatbotConfigPage() {
 
         <div className="bg-gray-100 border border-gray-200 rounded-xl p-8 space-y-8">
           <div>
-            <label className="block text-sm font-medium text-gray-900 mb-4">
+            <label className="block text-sm font-medium text-gray-900 mb-4 break-words">
               Peso de Keywords: {config.keywordWeight.toFixed(2)} ({((config.keywordWeight / total) * 100).toFixed(0)}%)
             </label>
             <Slider
@@ -63,7 +63,7 @@ export default function ChatbotConfigPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-900 mb-4">
+            <label className="block text-sm font-medium text-gray-900 mb-4 break-words">
               Peso de Industria: {config.industryWeight.toFixed(2)} ({((config.industryWeight / total) * 100).toFixed(0)}%)
             </label>
             <Slider
@@ -79,7 +79,7 @@ export default function ChatbotConfigPage() {
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-900 mb-4">
+            <label className="block text-sm font-medium text-gray-900 mb-4 break-words">
               Peso de Tecnología: {config.technologyWeight.toFixed(2)} ({((config.technologyWeight / total) * 100).toFixed(0)}%)
             </label>
             <Slider

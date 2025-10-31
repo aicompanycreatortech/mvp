@@ -10,7 +10,7 @@ export default function TopNav() {
   const { user, logout } = useAuth();
   
   return (
-    <div className="w-full border-b border-gray-200 bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+    <div className="w-full border-b border-gray-200 bg-white/95 backdrop-blur-md z-50 shadow-sm flex-shrink-0">
       <div className="mx-auto max-w-full px-8 h-16 flex items-center justify-between">
         {/* Left section - Logo and Search */}
         <div className="flex items-center gap-8 flex-1">

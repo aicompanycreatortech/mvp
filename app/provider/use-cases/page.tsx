@@ -97,7 +97,7 @@ export default function UseCasesPage() {
 
   return (
     <PageLayout>
-      <div className="bg-gray-50 min-h-screen">
+      <div className="bg-gray-50">
         <div className="mx-auto max-w-7xl px-8 py-8">
           <div className="flex items-center justify-between mb-8">
             <div>
@@ -154,7 +154,7 @@ export default function UseCasesPage() {
                         <span className="font-medium">Destacado</span>
                       </div>
                     )}
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 break-words">
                       {useCase.title}
                     </h3>
                     <div className="flex items-center gap-2 text-sm text-gray-600 mb-4">

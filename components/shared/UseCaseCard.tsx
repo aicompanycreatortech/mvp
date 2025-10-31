@@ -52,14 +52,14 @@ export default function UseCaseCard({
             <span>Destacado</span>
           </div>
         )}
-        <div className="flex items-start justify-between mb-3">
-          <div className="flex-1">
-            <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-gray-900 transition-colors">
+        <div className="flex items-start justify-between mb-3 gap-3">
+          <div className="flex-1 min-w-0">
+            <h3 className="text-lg font-semibold text-gray-900 mb-2 group-hover:text-gray-900 transition-colors line-clamp-2">
               {title}
             </h3>
             <div className="flex items-center gap-2 text-sm text-gray-600 mb-3">
-              <Building2 className="w-4 h-4" />
-              <span>{providerName}</span>
+              <Building2 className="w-4 h-4 flex-shrink-0" />
+              <span className="truncate">{providerName}</span>
             </div>
           </div>
           {score !== undefined && (
@@ -105,14 +105,15 @@ export default function UseCaseCard({
           ))}
         </div>
 
-        <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-200">
+        <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-200 gap-2">
           {views !== undefined && (
-            <span className="text-xs text-gray-500">{views} visualizaciones</span>
+            <span className="text-xs text-gray-500 truncate">{views} visualizaciones</span>
           )}
           {onContact && (
             <Button
               size="2"
               variant="soft"
+              className="flex-shrink-0"
               onClick={(e) => {
                 e.preventDefault();
                 onContact();

@@ -96,13 +96,13 @@ export default function Chatbot({ onSearch }: ChatbotProps) {
               </div>
             )}
             <div
-              className={`max-w-[75%] rounded-xl p-4 ${
+              className={`max-w-[75%] min-w-0 rounded-xl p-4 ${
                 msg.type === "user"
                   ? "bg-violet-500/20 text-gray-900 rounded-tr-sm"
                   : "bg-white text-gray-900 border border-gray-200"
               }`}
             >
-              <p className="text-sm leading-relaxed">{msg.content}</p>
+              <p className="text-sm leading-relaxed break-words whitespace-pre-wrap">{msg.content}</p>
             </div>
             {msg.type === "user" && (
               <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">

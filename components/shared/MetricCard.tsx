@@ -39,14 +39,14 @@ export default function MetricCard({ title, value, icon: Icon, change, subtitle 
           </div>
         </div>
       </div>
-      <div className="flex items-end justify-between">
-        <div>
-          <p className="text-4xl font-bold text-gray-900 mb-2">{value}</p>
+      <div className="flex items-end justify-between min-w-0">
+        <div className="flex-1 min-w-0">
+          <p className="text-4xl font-bold text-gray-900 mb-2 truncate">{value}</p>
           {change && (
-            <div className={`flex items-center gap-1.5 text-sm font-medium ${trendColors[change.trend]}`}>
+            <div className={`flex items-center gap-1.5 text-sm font-medium ${trendColors[change.trend]} flex-wrap`}>
               <span className="text-base">{trendIcons[change.trend]}</span>
               <span>{Math.abs(change.value)}%</span>
-              <span className="text-gray-400 text-xs ml-1">vs mes anterior</span>
+              <span className="text-gray-400 text-xs ml-1 whitespace-nowrap">vs mes anterior</span>
             </div>
           )}
         </div>

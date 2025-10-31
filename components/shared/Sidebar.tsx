@@ -75,9 +75,9 @@ export default function Sidebar() {
   const navItems = getNavItems();
 
   return (
-    <aside className="w-64 bg-white border-r border-gray-200 h-screen sticky top-0 flex flex-col">
+    <aside className="w-64 bg-white border-r border-gray-200 h-full flex flex-col overflow-hidden flex-shrink-0">
       {/* Navigation */}
-      <nav className="flex-1 overflow-y-auto p-4 space-y-1">
+      <nav className="flex-1 overflow-y-auto p-4 space-y-1 min-h-0">
         {navItems.map((item) => {
           const Icon = item.icon;
           const isActive =
@@ -112,18 +112,20 @@ export default function Sidebar() {
       </nav>
 
       {/* User Info Footer */}
-      <div className="p-4 border-t border-gray-200">
-        <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-full bg-violet-100 flex items-center justify-center">
+      <div className="p-4 border-t border-gray-200 flex-shrink-0 bg-white overflow-hidden">
+        <div className="flex items-center gap-3 min-w-0 w-full">
+          <div className="w-10 h-10 rounded-full bg-violet-100 flex items-center justify-center flex-shrink-0">
             <span className="text-xs font-semibold text-violet-700">
               {user.name.charAt(0).toUpperCase()}
             </span>
           </div>
-          <div className="flex-1 min-w-0">
-            <p className="text-sm font-medium text-gray-900 truncate">
+          <div className="flex-1 min-w-0 overflow-hidden max-w-full">
+            <p className="text-sm font-semibold text-gray-900 truncate leading-tight w-full">
               {user.name}
             </p>
-            <p className="text-xs text-gray-500 truncate">{user.email}</p>
+            <p className="text-xs text-gray-500 truncate leading-tight mt-0.5 w-full">
+              {user.email}
+            </p>
           </div>
         </div>
       </div>

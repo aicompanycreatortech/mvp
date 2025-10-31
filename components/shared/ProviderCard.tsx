@@ -40,25 +40,26 @@ export default function ProviderCard({
             <Building2 className="w-6 h-6 text-gray-600" />
           </div>
         )}
-        <div className="flex-1 min-w-0">
-          <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-gray-900 transition-colors">
+        <div className="flex-1 min-w-0 overflow-hidden">
+          <h3 className="text-lg font-semibold text-gray-900 mb-1 group-hover:text-gray-900 transition-colors truncate">
             {name}
           </h3>
-          <p className="text-sm text-gray-600 line-clamp-2">{elevatorPitch}</p>
+          <p className="text-sm text-gray-600 line-clamp-2 break-words">{elevatorPitch}</p>
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-2 mt-auto">
+      <div className="flex flex-wrap gap-2 mt-auto overflow-hidden">
         {competences.slice(0, 4).map((comp) => (
           <span
             key={comp}
-            className="px-2.5 py-1 bg-violet-500/20 text-violet-700 text-xs rounded-md border border-violet-500/30"
+            className="px-2.5 py-1 bg-violet-500/20 text-violet-700 text-xs rounded-md border border-violet-500/30 truncate max-w-full"
+            title={comp}
           >
             {comp}
           </span>
         ))}
         {competences.length > 4 && (
-          <span className="px-2.5 py-1 bg-gray-200 text-gray-500 text-xs rounded-md border border-gray-200">
+          <span className="px-2.5 py-1 bg-gray-200 text-gray-500 text-xs rounded-md border border-gray-200 flex-shrink-0">
             +{competences.length - 4}
           </span>
         )}

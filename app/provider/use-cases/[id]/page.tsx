@@ -87,7 +87,7 @@ export default function EditUseCasePage() {
 
   return (
     <PageLayout>
-      <div className="bg-gray-50 min-h-screen">
+      <div className="bg-gray-50">
         <div className="mx-auto max-w-4xl px-8 py-8">
         <div className="mb-8">
           <Link href="/provider/use-cases">

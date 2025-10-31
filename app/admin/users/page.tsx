@@ -56,7 +56,7 @@ export default function UsersPage() {
 
   return (
     <PageLayout>
-      <div className="bg-gray-50 min-h-screen">
+      <div className="bg-gray-50">
         <div className="mx-auto max-w-7xl px-8 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Gestión de Usuarios</h1>
@@ -72,34 +72,37 @@ export default function UsersPage() {
           </Tabs.List>
 
           <div className="bg-gray-100 border border-gray-200 rounded-xl overflow-hidden">
-            <table className="w-full">
-              <thead className="bg-gray-100">
-                <tr>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Usuario</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Email</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Rol</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Estado</th>
-                  <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Acciones</th>
-                </tr>
-              </thead>
-              <tbody>
-                {filteredUsers.map((u) => (
-                  <tr
-                    key={u.id}
-                    className="border-t border-gray-200 hover:bg-gray-100 transition-colors"
-                  >
-                    <td className="px-6 py-4">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center">
-                          <Users className="w-5 h-5 text-gray-600" />
+            <div className="overflow-x-auto">
+              <table className="w-full min-w-[640px]">
+                <thead className="bg-gray-100">
+                  <tr>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Usuario</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Email</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Rol</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Estado</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {filteredUsers.map((u) => (
+                    <tr
+                      key={u.id}
+                      className="border-t border-gray-200 hover:bg-gray-100 transition-colors"
+                    >
+                      <td className="px-6 py-4">
+                        <div className="flex items-center gap-3 min-w-0">
+                          <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center flex-shrink-0">
+                            <Users className="w-5 h-5 text-gray-600" />
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <p className="text-gray-900 font-medium truncate">{u.name}</p>
+                            {u.company && <p className="text-xs text-gray-500 truncate">{u.company}</p>}
+                          </div>
                         </div>
-                        <div>
-                          <p className="text-gray-900 font-medium">{u.name}</p>
-                          {u.company && <p className="text-xs text-gray-500">{u.company}</p>}
-                        </div>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4 text-gray-600">{u.email}</td>
+                      </td>
+                      <td className="px-6 py-4 text-gray-600">
+                        <span className="truncate block max-w-[200px]">{u.email}</span>
+                      </td>
                     <td className="px-6 py-4">
                       <span className="px-3 py-1 rounded-lg text-xs font-medium bg-violet-500/20 text-violet-700 border border-violet-500/50">
                         {u.role}
@@ -128,6 +131,7 @@ export default function UsersPage() {
                 ))}
               </tbody>
             </table>
+            </div>
           </div>
         </Tabs.Root>
 

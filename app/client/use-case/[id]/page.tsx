@@ -46,7 +46,7 @@ export default function UseCaseDetailPage() {
 
   return (
     <PageLayout>
-      <div className="bg-gray-50 min-h-screen">
+      <div className="bg-gray-50">
         <div className="mx-auto max-w-4xl px-8 py-8">
         <Link href="/client">
           <Button size="2" variant="ghost" className="mb-6">
@@ -56,13 +56,13 @@ export default function UseCaseDetailPage() {
         </Link>
 
         <div className="bg-gray-100 border border-gray-200 rounded-xl p-8 mb-6">
-          <h1 className="text-3xl font-bold text-gray-900 mb-4">{useCase.title}</h1>
-          <div className="flex items-center gap-4 mb-6">
-            <div className="flex items-center gap-2 text-gray-600">
-              <Building2 className="w-5 h-5" />
+          <h1 className="text-3xl font-bold text-gray-900 mb-4 break-words">{useCase.title}</h1>
+          <div className="flex items-center gap-4 mb-6 flex-wrap">
+            <div className="flex items-center gap-2 text-gray-600 min-w-0">
+              <Building2 className="w-5 h-5 flex-shrink-0" />
               <Link
                 href={`/client/provider/${provider?.id}`}
-                className="hover:text-gray-900 transition-colors"
+                className="hover:text-gray-900 transition-colors truncate"
               >
                 {provider?.name}
               </Link>
@@ -116,25 +116,25 @@ export default function UseCaseDetailPage() {
         <div className="space-y-6">
           <div className="bg-gray-100 border border-gray-200 rounded-xl p-8">
             <h2 className="text-xl font-semibold text-gray-900 mb-4">Problema del Cliente</h2>
-            <p className="text-gray-900 leading-relaxed">{useCase.problem}</p>
+            <p className="text-gray-900 leading-relaxed break-words whitespace-pre-wrap">{useCase.problem}</p>
           </div>
 
           <div className="bg-gray-100 border border-gray-200 rounded-xl p-8">
             <h2 className="text-xl font-semibold text-gray-900 mb-4">Solución Implementada</h2>
-            <p className="text-gray-900 leading-relaxed">{useCase.solution}</p>
+            <p className="text-gray-900 leading-relaxed break-words whitespace-pre-wrap">{useCase.solution}</p>
           </div>
 
           <div className="bg-gradient-to-r from-violet-500/20 to-blue-500/20 border border-violet-500/50 rounded-xl p-8">
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+            <div className="flex items-center justify-between gap-4 flex-wrap">
+              <div className="flex-1 min-w-0">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2 break-words">
                   ¿Interesado en esta solución?
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-600 break-words">
                   Contacta con {provider?.name} para discutir cómo pueden ayudarte
                 </p>
               </div>
-              <Link href={`/client/provider/${provider?.id}`}>
+              <Link href={`/client/provider/${provider?.id}`} className="flex-shrink-0">
                 <Button size="3" highContrast>
                   <MessageSquare className="w-4 h-4 mr-2" />
                   Contactar Proveedor

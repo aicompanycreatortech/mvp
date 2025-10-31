@@ -102,7 +102,7 @@ export default function ProviderProfilePage() {
 
   return (
     <PageLayout>
-      <div className="bg-gray-50 min-h-screen">
+      <div className="bg-gray-50">
         <div className="mx-auto max-w-6xl px-8 py-8">
         {/* Hero Section */}
         <div className="bg-gray-100 border border-gray-200 rounded-xl p-8 mb-8">
@@ -118,9 +118,9 @@ export default function ProviderProfilePage() {
                 <Building2 className="w-10 h-10 text-gray-500" />
               </div>
             )}
-            <div className="flex-1">
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">{provider.name}</h1>
-              <p className="text-gray-600 mb-4">{provider.elevatorPitch}</p>
+            <div className="flex-1 min-w-0">
+              <h1 className="text-3xl font-bold text-gray-900 mb-2 break-words">{provider.name}</h1>
+              <p className="text-gray-600 mb-4 break-words">{provider.elevatorPitch}</p>
               <div className="flex items-center gap-4">
                 {provider.website && (
                   <a
@@ -166,14 +166,15 @@ export default function ProviderProfilePage() {
           <Tabs.Content value="summary">
             <div className="bg-gray-100 border border-gray-200 rounded-xl p-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">Propuesta de Valor</h2>
-              <p className="text-gray-900 leading-relaxed mb-6">{provider.valueProp}</p>
+              <p className="text-gray-900 leading-relaxed mb-6 break-words">{provider.valueProp}</p>
 
               <h3 className="text-xl font-semibold text-gray-900 mb-4">Competencias Clave</h3>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 overflow-hidden">
                 {provider.competences.map((comp: string) => (
                   <span
                     key={comp}
-                    className="px-4 py-2 bg-violet-500/20 text-violet-700 rounded-lg border border-violet-500/30"
+                    className="px-4 py-2 bg-violet-500/20 text-violet-700 rounded-lg border border-violet-500/30 truncate max-w-full"
+                    title={comp}
                   >
                     {comp}
                   </span>
@@ -265,11 +266,12 @@ export default function ProviderProfilePage() {
                 <Code className="w-6 h-6" />
                 Stack Tecnológico
               </h2>
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 overflow-hidden">
                 {provider.stack.map((tech: string) => (
                   <span
                     key={tech}
-                    className="px-4 py-2 bg-purple-500/20 text-purple-700 rounded-lg border border-purple-500/30 text-lg font-medium"
+                    className="px-4 py-2 bg-purple-500/20 text-purple-700 rounded-lg border border-purple-500/30 text-lg font-medium truncate max-w-full"
+                    title={tech}
                   >
                     {tech}
                   </span>
@@ -290,21 +292,21 @@ export default function ProviderProfilePage() {
                     key={idx}
                     className="p-6 bg-gray-100 rounded-lg border border-gray-200"
                   >
-                    <div className="flex items-center gap-4 mb-4">
+                    <div className="flex items-center gap-4 mb-4 min-w-0">
                       {client.logoUrl ? (
                         <img
                           src={client.logoUrl}
                           alt={client.name}
-                          className="w-12 h-12 rounded-lg object-contain"
+                          className="w-12 h-12 rounded-lg object-contain flex-shrink-0"
                         />
                       ) : (
-                        <div className="w-12 h-12 rounded-lg bg-gray-200 border border-gray-200 flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-lg bg-gray-200 border border-gray-200 flex items-center justify-center flex-shrink-0">
                           <Building2 className="w-6 h-6 text-gray-500" />
                         </div>
                       )}
-                      <h3 className="font-semibold text-gray-900">{client.name}</h3>
+                      <h3 className="font-semibold text-gray-900 truncate flex-1 min-w-0">{client.name}</h3>
                     </div>
-                    <p className="text-sm text-gray-900 italic">"{client.testimonial}"</p>
+                    <p className="text-sm text-gray-900 italic break-words whitespace-pre-wrap">"{client.testimonial}"</p>
                   </div>
                 ))}
               </div>

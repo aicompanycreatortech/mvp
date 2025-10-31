@@ -107,7 +107,7 @@ export default function InboxPage() {
 
   return (
     <PageLayout>
-      <div className="bg-gray-50 min-h-screen">
+      <div className="bg-gray-50">
         <div className="mx-auto max-w-7xl px-8 py-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900 mb-2">Buzón de Interacciones</h1>
@@ -165,7 +165,7 @@ export default function InboxPage() {
                           {lead.status}
                         </span>
                       </div>
-                      <p className="text-sm text-gray-600 mb-1">
+                      <p className="text-sm text-gray-600 mb-1 break-words">
                         Caso de uso: <span className="text-gray-900">{lead.useCaseTitle}</span>
                       </p>
                       <p className="text-xs text-gray-500">
@@ -179,13 +179,13 @@ export default function InboxPage() {
                   </div>
 
                   <div className="bg-gray-100 rounded-lg p-4 mb-4 border border-gray-200">
-                    <p className="text-sm text-gray-900">{lead.message}</p>
+                    <p className="text-sm text-gray-900 break-words whitespace-pre-wrap">{lead.message}</p>
                   </div>
 
                   {lead.lastMessage && (
                     <div className="bg-blue-500/10 rounded-lg p-4 mb-4 border border-blue-500/20">
                       <p className="text-xs text-blue-700 mb-1">Tu última respuesta:</p>
-                      <p className="text-sm text-gray-900">{lead.lastMessage}</p>
+                      <p className="text-sm text-gray-900 break-words whitespace-pre-wrap">{lead.lastMessage}</p>
                     </div>
                   )}
 
