@@ -108,4 +108,4 @@ lib/
 
 ## 📄 Licencia
 
-MIT TIM
+MIT
